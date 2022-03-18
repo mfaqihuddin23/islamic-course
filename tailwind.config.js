@@ -34,6 +34,10 @@ module.exports = {
       colors: {
         maroon: "#4a1b22",
         ruby: "#CE3252",
+        third: "#6F585B",
+        gray: "#C4C4C4",
+        gray2: "#3C64B140",
+
 
       },
       boxShadow: {

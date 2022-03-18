@@ -28,21 +28,21 @@
             <a class="#" href="/">
               <img src="assets/img/logo/logo.svg" style="width: 104px" alt="Islamic Course Logo" />
             </a>
-            <div id="searchBox" class="flex gap-2 border border-ruby rounded-md p-3">
+            <div id="searchBox" class="hidden lg:flex gap-2 border border-ruby rounded-md p-3">
               <span><img src="assets/img/icon/search.svg" alt="search-icon"> </span>
               <input type="text" class="bg-transparent" placeholder="what do you want to learn today ?">
             </div>
           </div>
           <!-- desktop menu -->
           <div class="hidden lg:flex items-center ml-auto">
-            <nav class="text-base font-semibold leading-6 inter font-normal">
+            <nav class="text-base font-semibold leading-6">
               <ul class="flex items-center space-x-8">
                 <li><a class="" href="#">My Classes</a></li>
-                <li><img class="rounded-full" style="width: 46px"" src=" assets/img/object/ava-hijab.jpg" alt="avatar">
+                <li><img class="rounded-full" style="width: 46px"" src=" assets/img/avatar/ava-hijab.jpg" alt="avatar">
                 </li>
                 <li>
                   <a class="button-main" href="#">
-                    Become Member
+                    Become a Member
                   </a>
                 </li>
               </ul>
@@ -70,7 +70,7 @@
               <!-- Button -->
               <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dropdown-button')"
                 type="button">
-                <img src="assets/img/icon/mobile-menu.svg" style="height: 12px" alt="mobile-menu" />
+                <img src="assets/img/icon/mobile-menu.svg" style="width: 24px" alt="mobile-menu" />
               </button>
               <!-- Panel -->
               <div x-ref="panel" x-show="open" x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')"
@@ -78,21 +78,22 @@
                 x-transition:enter-start="transform-all -right-80" x-transition:enter-end="transform-all right-0"
                 x-transition:leave="transition-all ease-in duration-75" x-transition:leave-start="transform-all right-0"
                 x-transition:leave-end="transform-all -right-80" class="fixed z-50 top-0 right-0 flex w-full h-screen">
-                <div class="grid gap-12 content-start w-4/5 bg-main px-8 pt-7 md:pt-7 pb-4 overflow-y-scroll h-screen">
+                <div
+                  class="grid gap-12 content-start w-4/5 bg-maroon px-8 pt-7 md:pt-7 pb-4 overflow-y-scroll h-screen">
                   <div class="flex justify-between">
                     <img src="assets/img/logo/logo.svg" style="width: 150px" alt="GSD-logo" />
                     <button @click="open = !open">
                       <img style="height: 24px" src="assets/img/icon/close.svg" alt="close" />
                     </button>
                   </div>
-                  <div class="text-lg inter font-normal">
+                  <div class="text-base font-semibold leading-6">
                     <ul class="grid gap-12">
                       <li><a href="#">My Classes</a></li>
-                      <li><img class="rounded-full" style="width: 46px"" src=" assets/img/object/ava-hijab.jpg"
+                      <li><img class="rounded-full" style="width: 46px"" src=" assets/img/avatar/ava-hijab.jpg"
                           alt="avatar"></li>
                       <li>
-                        <a class="font-semibold button-main" href="#">
-                          Become Member
+                        <a class="button-main" href="#">
+                          Become a Member
                         </a>
                       </li>
                     </ul>
@@ -104,51 +105,59 @@
         </nav>
       </div>
     </div>
-    <div class="inner-section container grid flex-col grid-cols-12">
-      <!-- login -->
-      <div class="grid col-start-2 col-span-4 rounded-xl h-full w-full">
-        <div id="login-box" class="grid justify-items-center ">
-          <h1 class="text-center p6">Explore 1,000+
-            hours of deep Islamic
-            Knowledge!</h1>
-          <button class="flex button-outline w-full m-4 h-16">
-            <img src="./assets/img/icon/google.svg" alt="google">
-            <h2>Continue with Google</h2>
-          </button>
-          <button class="grid grid-flow-col cols-4 justify-center button-outline w-full m-4 h-16">
-            <img class="col-span-1" src="./assets/img/icon/facebook.svg" alt="facebook">
-            <h2 class="col-span-3">Continue with Facebook</h2>
-          </button>
-        </div>
-      </div>
+    <div class="inner-section container grid lg:grid-cols-12 gap-4">
       <!-- hero image -->
-      <div class="col-start-6 col-span-7 py-14">
+      <div class="lg:col-start-6 lg:col-span-7 lg:py-14 lg:order-last">
         <img src="./assets/img/object/hero.png" alt="hero">
       </div>
+      <!-- login -->
+      <div id="login-box" class="grid lg:col-start-2 lg:col-span-4 rounded-xl h-full w-full">
+        <div class="grid justify-items-center content-center gap-5 mb-10 lg:mb-0">
+          <h1 class="text-center">Explore 1,000+ hours of deep Islamic Knowledge!</h1>
+          <h2 class="font-semibold text-gray mb-3">Start learning for free</h2>
+          <button class="flex button-outline w-full h-16 px-5 py-9">
+            <img class="w-12" src="./assets/img/icon/google.svg" alt="google">
+            <h2 class="grow">Continue with Google</h2>
+          </button>
+          <button class="flex button-outline w-full h-16 px-5 py-9">
+            <img class="w-12" src="./assets/img/icon/facebook.svg" alt="facebook">
+            <h2 class="grow">Continue with Facebook</h2>
+          </button>
+          <h2>or</h2>
+          <h2 class="text-ruby">Sign Up With Email</h2>
+          <h3>Skillshare to Islamic Courses</h3>
+        </div>
+      </div>
+
     </div>
   </section>
   <!-- discover section -->
   <section id="how-it-works">
-    <div class="container flex flex-col py-32 gap-24 lg:gap-16 justify-items-center">
-      <div class="text-center">
-        <h1 class="mb-5">Discover Deep Knowledge </h1>
-      </div>
+    <div class="container flex flex-col pt-16 pb-20  gap-16 lg:gap-8 justify-items-center text-center">
+      <h1 class="text-maroon">Discover Deep Knowledge </h1>
+      <ul class="flex space-x-14 text-center justify-center text-gray2 font-bold">
+        <li class="text-black underline decoration-ruby decoration-2 underline-offset-4"><a href="#">All
+            catagories</a></li>
+        <li><a href="#"></a>History</li>
+        <li><a href="#"></a>Hadith</li>
+        <li><a href="#"></a>Al-quran</li>
+        <li><a href="#"></a>Art</li>
+        <li><a href="#"></a>Poetry</li>
+        <li><a href="#"></a>Culture</li>
+      </ul>
     </div>
   </section>
   <!-- how it works section -->
   <section id="how-it-works">
-    <div class="container flex flex-col py-32 gap-24 lg:gap-16 justify-items-center">
-      <div class="text-center">
-        <h1 class="mb-5">How Islamic Courses Works</h1>
-      </div>
+    <div class="container flex flex-col pt-16 pb-20 gap-16 lg:gap-8 justify-items-center text-center">
+      <h1 class="text-maroon">How Islamic Courses Works</h1>
+      <img src="./assets/img/object/how-it-works.png" alt="how-it-works">
     </div>
   </section>
   <!-- most popular section -->
   <section id="most-popular">
-    <div class="container flex flex-col py-32 gap-24 lg:gap-16 justify-items-center">
-      <div class="">
-        <h1 class="mb-5">Most Popular </h1>
-      </div>
+    <div class="container flex flex-col pt-16 pb-20 gap-16 lg:gap-8 justify-items-center">
+      <h1 class="text-third">Most Popular</h1>
     </div>
   </section>
   <!-- quote section -->
