@@ -544,7 +544,7 @@ h2 {
 }
 
 .jakarta {
-  font-family: "PlusJakartaSans", sans-serif;
+  font-family: 'Plus Jakarta Display', sans-serif;
 }
 
 .button-main {
@@ -625,6 +625,14 @@ h2 {
   grid-column: span 5 / span 5;
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
 .col-start-2 {
   grid-column-start: 2;
 }
@@ -702,8 +710,16 @@ h2 {
   width: 80%;
 }
 
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -720,6 +736,10 @@ h2 {
 
 .items-center {
   align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
@@ -914,6 +934,8 @@ h2 {
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
+
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css");
 
 @media (min-width: 640px) {
   .md\:col-span-8 {
